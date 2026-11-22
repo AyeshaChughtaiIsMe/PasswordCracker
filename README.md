@@ -1,4 +1,4 @@
-# passwordCracker
+# Password Cracker
 
 An educational password-cracking toolkit that demonstrates **why weak
 passwords and fast, unsalted hashes fail**.
