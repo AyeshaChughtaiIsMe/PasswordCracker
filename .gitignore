@@ -1,0 +1,40 @@
+# Python 
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments 
+.venv/
+venv/
+ENV/
+env/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing / tooling 
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Project-generated artifacts
+# Rainbow table cache. Rebuilt on demand from the wordlist; do NOT commit —
+# a committed cache will be stale for anyone who clones the repo.
+wordlists/rainbow_md5.json
+
+# Test scratch file used to verify the empty-wordlist guard. Not shipped.
+wordlists/empty.txt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/

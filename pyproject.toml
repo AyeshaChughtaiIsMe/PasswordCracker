@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "password-cracker"
+version = "0.1.0"
+description = "An educational password cracking tool demonstrating why weak passwords and fast unsalted hashes fail."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Ayesha Chughtai" }
+]
+keywords = ["security", "password", "hashing", "education", "cybersecurity"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+]
+
+# Core runtime dependencies.
+# We intentionally keep this minimal — everything we need (hashlib, hmac,
+# itertools, os, json, argparse) is in the Python standard library.
+# This is a deliberate teaching point: the crypto primitives we attack
+# are stdlib, and the attacks themselves need no third-party magic.
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+]
+
+[project.scripts]
+# Optional convenience wrapper. The primary interface is `python -m password_cracker`,
+# but this lets you run `passwordCracker` after `pip install -e .`
+passwordCracker = "passwordCracker.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/AyeshaChughtaiIsMe/PasswordCracker"
+Repository = "https://github.com/AyeshaChughtaiIsMe/PasswordCracker"
+Issues = "https://github.com/AyeshaChughtaiIsMe/PasswordCracker/issues"
+
+[tool.setuptools.packages.find]
+include = ["passwordCracker*"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-ra -q"
